@@ -1,28 +1,32 @@
 ALGORITHM sentence
-
+//initialize variables
 VAR
-L,w,v : integer:=0;
-i: integer:=1;
-ch:string;
+    L, w, v: integer := 0;    
+    i: integer := 1;          
+    ch: string;               
+    
 BEGIN
-repeat
-writeln('enter sentence :',ch)
-readln(ch)
-until (ch[i]='.')
-WHILE (i <= length(ch) ) DO
-BEGIN
-if ch[i]='.' then
-l:=l+1
-end_if
-if (ch[i]=' ') or (i=length(ch)) then
-w:=w+1
-end_if
-if (ch[i] in ['a','e','i','o','u']) then
-v:=v+1
-end_if
-i:=i+1
-END_WHILE
-writeln('length of sentence is :',L);
-writeln('number of words is :',w);
-writeln('vowel count is :',v);
-END sentence;
+//repeat until a '.' is found
+    repeat
+        writeln('enter sentence :', ch); 
+        readln(ch);                        
+    until (ch[i] = '.');              
+    //count the number of sentences,words and voyels 
+    WHILE (i <= length(ch)) DO   
+    BEGIN
+        if ch[i] = '.' then             
+            L := L + 1;                   
+        
+        if (ch[i] = ' ') or (i = length(ch)) then
+            w := w + 1;                  
+        
+        if (ch[i] in ['a', 'e', 'i', 'o', 'u']) then
+            v := v + 1;                     
+        
+        i := i + 1;                        
+    END_WHILE
+    //results output
+    writeln('length of sentence is :', L); 
+    writeln('number of words is :', w);  
+    writeln('vowel count is :', v); 
+END.
